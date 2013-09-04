@@ -20,7 +20,6 @@ filetype plugin indent on
 :map \l :setlocal number!<CR>
 :map \o :set paste!<CR>
 :map <F2> :echo 'Current time is ' . strftime('%c')<CR>
-:inoremap <c-s> :<ESC><CR>
 
 filetype plugin on
 let g:pydiction_location = '/home/sagar/.vim/bundle/Pydiction/complete-dict'
