@@ -1,3 +1,9 @@
 [submodule "bundle/syntax_opengl"]
 	path = bundle/syntax_opengl
 	url = git://github.com/beyondmarc/opengl.vim.git
+[submodule "bundle/auto-pairs"]
+	path = bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
