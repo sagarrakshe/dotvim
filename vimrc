@@ -45,3 +45,5 @@ set foldlevel=1         "this is just what i use
 "setting font 
 set guifont=Monospace\ 12
 
+colorscheme busybee
+set noswapfile
