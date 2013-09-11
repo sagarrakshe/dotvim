@@ -43,4 +43,5 @@ set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
 "setting font 
-set guifont=Monospace\ 13
+set guifont=Monospace\ 12
+
