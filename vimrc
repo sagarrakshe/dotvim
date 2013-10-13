@@ -14,6 +14,7 @@ set shiftwidth=4
 set expandtab
 set dictionary+=/usr/share/dict/words
 
+
 syntax on
 filetype plugin indent on
 
