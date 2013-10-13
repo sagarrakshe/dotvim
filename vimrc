@@ -12,6 +12,7 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set dictionary+=/usr/share/dict/words
 
 syntax on
 filetype plugin indent on
