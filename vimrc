@@ -27,16 +27,19 @@ filetype plugin on
 let g:pydiction_location = '/home/sagar/.vim/bundle/Pydiction/complete-dict'
 
 "mapped keys
-:map <C-Tab> gt
-:noremap <silent> <C-S> : update<CR>
-:noremap <silent> <C-N> : tabnew<CR>
-:imap jj <Esc>
-:noremap <C-L> :nohl<CR><C-L>
-:inoremap ;<cr> <end>;
-:nmap <silent> <C-D> :NERDTreeToggle<CR>
-:inoremap <Space><cr> <end><cr>
-:inoremap <Space><Space><cr> <end>
-:noremap <silent><F5> : update<CR>
+map <C-Tab> gt
+noremap <silent> <C-S> : update<CR>
+noremap <silent> <C-N> : tabnew<CR>
+imap jj <Esc>
+noremap <C-L> :nohl<CR><C-L>
+inoremap ;<cr> <end>;
+nmap <silent> <C-D> :NERDTreeToggle<CR>
+inoremap <Space><cr> <end><cr>
+inoremap <Space><Space><cr> <end>
+noremap <silent><F5> : update<CR>
+inoremap ,, <ESC>f"i<Right>,
+noremap j gj
+noremap k gk
 
 "folding settings
 set foldmethod=indent   "fold based on indent
