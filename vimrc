@@ -19,9 +19,9 @@ syntax on
 filetype plugin indent on
 
 "my-customization
-:map \l :setlocal number!<CR>
-:map \o :set paste!<CR>
-:map <F2> :echo 'Current time is ' . strftime('%c')<CR>
+map \l :setlocal number!<CR>
+map \o :set paste!<CR>
+map <F2> :echo 'Current time is ' . strftime('%c')<CR>
 
 filetype plugin on
 let g:pydiction_location = '/home/sagar/.vim/bundle/Pydiction/complete-dict'
@@ -38,6 +38,9 @@ inoremap <Space><cr> <end><cr>
 inoremap <Space><Space><cr> <end>
 noremap <silent><F5> : update<CR>
 inoremap ,, <ESC>f"i<Right>,
+inoremap ,<cr> <ESC>f'i<Right>,
+inoremap )) <ESC>f)i<Right>
+inoremap ]] <ESC>f]i<Right>
 noremap j gj
 noremap k gk
 
@@ -50,6 +53,7 @@ set foldlevel=1         "this is just what i use
 "setting font 
 set guifont=Monospace\ 12
 
-colorscheme busybee
+colorscheme Monokai 
 set noswapfile
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+
