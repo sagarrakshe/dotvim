@@ -46,6 +46,9 @@ inoremap )) <ESC>f)i<Right>
 inoremap ]] <ESC>f]i<Right>
 noremap j gj
 noremap k gk
+vnoremap ( <ESC>`>a)<ESC>`<i(<ESC>
+vnoremap { <ESC>`>a}<ESC>`<i{<ESC>
+vnoremap " <ESC>`>a"<ESC>`<i"<ESC>
 
 "folding settings
 set foldmethod=indent   "fold based on indent
