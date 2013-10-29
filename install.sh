@@ -11,8 +11,4 @@ mv ~/.gvimrc ~/.gvimrc_bak &> /dev/null
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc
 
-echo -e "Installing plugin...\n"
-git submodule init
-git submodule update
-echo "Done. Ready to use vim!"
-
+vim +BundleInstall +qall
