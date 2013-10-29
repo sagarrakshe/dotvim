@@ -5,7 +5,7 @@
 * [Command-T](https://github.com/wincent/Command-T)
 * [Ctrlp](https://github.com/kien/ctrlp.vim)
 * [Easymotion](https://github.com/Lokaltog/vim-easymotion)
-* [Jedi-vim](https://github.com/Lokaltog/vim-easymotion)
+* [Jedi-vim](https://github.com/davidhalter/jedi-vim)
 * [Multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 * [Neocomplcache](https://github.com/Shougo/neocomplcache.vim)
 * [Nerdtree](https://github.com/scrooloose/nerdtree)
