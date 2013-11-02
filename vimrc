@@ -52,10 +52,14 @@ Bundle "tpope/vim-surround"
 Bundle "Valloric/YouCompleteMe"
 Bundle "mrinterweb/vim-visual-surround.git"
 Bundle "beyondmarc/opengl.vim"
+Bundle "vim-scripts/TwitVim"
+
+" change the mapleader from \ to ,
+let mapleader=","
 
 "Mapped Keys
-map \l :setlocal number!<CR>
-map \o :set paste!<CR>
+map <leader>l :setlocal number!<CR>
+map <leader>o :set paste!<CR>
 map <C-Tab> gt
 map <C-S-Tab> gT
 map hs <C-w>s
@@ -64,6 +68,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-h> <C-w>h
 map <C-u> <C-w>l
+map <C-e> :Errors<CR>
 
 "Insert Mode Mapping
 imap jj <Esc>
@@ -77,6 +82,8 @@ inoremap ]] <ESC>f]i<Right>
 
 " Normal Mode Mapping
 nmap <silent> <C-D> :NERDTreeToggle<CR>
+nmap <silent> <leader>ev :e $MYVIMRC<CR> 
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 noremap j gj
 noremap k gk
 noremap <silent> <C-S> : update<CR>
@@ -85,8 +92,9 @@ noremap <silent><F5> : update<CR>
 noremap <C-L> :nohl<CR><C-L>
 noremap + <C-a>
 noremap - <C-x>
+nnoremap ; :
 
-" Visual Mode Mapping
+" Visual Move Mapping
 vnoremap ( <ESC>`>a)<ESC>`<i(<ESC>
 vnoremap { <ESC>`>a}<ESC>`<i{<ESC>
 vnoremap " <ESC>`>a"<ESC>`<i"<ESC>
