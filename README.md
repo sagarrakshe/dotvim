@@ -1,3 +1,19 @@
+##~/.vimrc configuration
+
+I have been using vim since 3-4 years but never used even basic features in it. But recently i played lot with vim and tweaked for my needs. This is a small attempt for awesome `vimrc` plugin. 
+
+##Installation:
+
+It's pretty simple to install. Clone the repo and execute the `install.sh` file from it. It takes backup of your existing `.vimrc` and `.gvimrc` files(`~/.vimrc` and `~/.gvimrc`). In case you need to switch back to your original, just remap those original files.
+    
+    $ git clone https://github.com/sagarrakshe/dotvim ~/.vim
+    $ cd .vim
+    $ ./install.sh
+
+##Color-Themes
+
+It contains about 450+ color themes. Choose yours!
+
 ##Plugins
 
 * [Auto-pairs](https://github.com/jiangmiao/auto-pairs)
@@ -21,11 +37,11 @@
 * [Surround](https://github.com/tpope/vim-surround)
 * [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 
-450+ color themes.
+##Key-Mappings
 
-##Installation:
-    
-    $ git clone https://github.com/sagarrakshe/dotvim ~/.vim
-    $ cd .vim
-    $ ./install.sh
+##Gmail in Vim - Vmail!
 
+Vmail is a Vim interface to Gmail. To install follow the instructions [here](http://danielchoi.com/software/vmail.html).
+To launch, enter command on terminal `vmail` or if already vim is running execute `!vmail`.
+
+I have remaped `gmail` in normal mode for `vmail`. So in normal mode if you type `gmail` your gmail inbox will open.
