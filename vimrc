@@ -94,6 +94,7 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <C-D> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR> 
+map Q :q!
 
 " nmap <F5> :Errors<CR>
 nmap gmail :!vmail<CR>
