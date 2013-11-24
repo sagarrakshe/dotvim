@@ -25,7 +25,8 @@ set noswapfile
 set showcmd
 
 "Setting Font 
-set guifont=Monospace\ 12
+"Programming Font
+set guifont=Fira\ Mono\ 12
 colorscheme Monokai 
 
 "Code Folding Settings
@@ -60,6 +61,10 @@ Bundle "vim-scripts/TwitVim"
 Bundle "vim-scripts/a.vim"
 Bundle "milkypostman/vim-togglelist"
 Bundle "majutsushi/tagbar"
+Bundle "sagarrakshe/CoVim"
+Bundle "sagarrakshe/ack.vim"
+Bundle "honza/vim-snippets"
+Bundle "jceb/vim-orgmode"
 
 " change the mapleader from \ to ,
 let mapleader=","
@@ -82,7 +87,7 @@ inoremap <Space><Space><cr> <end>
 inoremap ,, <ESC>f"i<Right>,
 inoremap ,<cr> <ESC>f'i<Right>,
 inoremap )) <ESC>f)i<Right>
-inoremap ]] <ESC>f]i<Right>
+inoremap ]] <esc>f]i<right>
 
 " Normal Mode Mapping
 nmap <silent> <leader>ev :e $MYVIMRC<CR> 
