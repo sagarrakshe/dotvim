@@ -78,10 +78,12 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-h> <C-w>h
 map <C-u> <C-w>l
+map Q :q!
 
 "Insert Mode Mapping
 imap jj <Esc>
 inoremap ;<cr> <end>;
+inoremap :<cr> <end>:
 inoremap <Space><cr> <end><cr>
 inoremap <Space><Space><cr> <end>
 inoremap ,, <ESC>f"i<Right>,
@@ -94,7 +96,6 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <C-D> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR> 
-map Q :q!
 
 " nmap <F5> :Errors<CR>
 nmap gmail :!vmail<CR>
@@ -140,3 +141,20 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extr
 let g:pydiction_location = '/home/sagar/.vim/bundle/Pydiction/complete-dict'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" mapped <F5> to display error in quickfix window
+function! ToggleQuickFix()
+  if exists("g:qwindow")
+    lclose
+    unlet g:qwindow
+  else
+    try
+      Errors
+      let g:qwindow = 1
+    catch 
+      echo "No Errors found!"
+    endtry
+  endif
+endfunction
+
+nmap <script> <silent> <F5> :call ToggleQuickFix()<CR>
