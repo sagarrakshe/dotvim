@@ -65,6 +65,9 @@ Bundle "sagarrakshe/CoVim"
 Bundle "sagarrakshe/ack.vim"
 Bundle "honza/vim-snippets"
 Bundle "jceb/vim-orgmode"
+Bundle "tpope/vim-vinegar"
+Bundle "junegunn/goyo.vim"
+Bundle "amix/vim-zenroom2"
 
 " change the mapleader from \ to ,
 let mapleader=","
@@ -96,9 +99,10 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <C-D> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR> 
+nmap gmail :!vmail<CR>
+nmap bash :ConqueTermSplit bash
 
 " nmap <F5> :Errors<CR>
-nmap gmail :!vmail<CR>
 noremap j gj
 noremap k gk
 noremap <silent> <C-S> : update<CR>
@@ -141,6 +145,7 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extr
 let g:pydiction_location = '/home/sagar/.vim/bundle/Pydiction/complete-dict'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:jedi#popup_select_first = 0
 
 " mapped <F5> to display error in quickfix window
 function! ToggleQuickFix()
@@ -156,5 +161,16 @@ function! ToggleQuickFix()
     endtry
   endif
 endfunction
-
 nmap <script> <silent> <F5> :call ToggleQuickFix()<CR>
+
+
+function! Myscript()
+python<<EOF
+import vim
+try:
+    import vlc 
+    vim.current.buffer.append("Math")
+except:
+    vim.current.buffer.append("No Math")
+EOF
+endfunction
