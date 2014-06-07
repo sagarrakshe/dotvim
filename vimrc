@@ -27,7 +27,7 @@ set showcmd
 "Setting Font 
 "Programming Font
 set guifont=Fira\ Mono\ 11
-colorscheme Monokai 
+colorscheme mango 
 
 "Code Folding Settings
 set foldmethod=indent   "fold based on indent

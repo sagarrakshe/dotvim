@@ -76,3 +76,6 @@
 [submodule "bundle/zenroom"]
 	path = bundle/zenroom
 	url = https://github.com/amix/vim-zenroom
+[submodule "bundle/javascript"]
+	path = bundle/javascript
+	url = https://github.com/pangloss/vim-javascript
