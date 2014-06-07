@@ -12,3 +12,4 @@ ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc
 
 vim +BundleInstall +qall
+sudo cp -r ./font/Fira Mono /usr/share/fonts/truetype/
