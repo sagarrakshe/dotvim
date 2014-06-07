@@ -35,40 +35,6 @@ set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
-"My-Bundles
-Bundle "jiangmiao/auto-pairs"
-Bundle "Rip-Rip/clang_complete"
-Bundle "wincent/Command-T"
-Bundle "kien/ctrlp.vim"
-Bundle "Lokaltog/vim-easymotion"
-Bundle "davidhalter/jedi-vim"
-Bundle "terryma/vim-multiple-cursors"
-Bundle "Shougo/neocomplcache.vim"
-Bundle "scrooloose/nerdtree"
-Bundle "ervandew/supertab"
-Bundle "scrooloose/syntastic"
-Bundle "vim-scripts/taglist.vim"
-Bundle "aperezdc/vim-template"
-Bundle "vim-scripts/tComment"
-Bundle "tpope/vim-fugitive"
-Bundle "Lokaltog/vim-powerline"
-Bundle "tpope/vim-sensible"
-Bundle "tpope/vim-surround"
-Bundle "Valloric/YouCompleteMe"
-Bundle "mrinterweb/vim-visual-surround.git"
-Bundle "beyondmarc/opengl.vim"
-Bundle "vim-scripts/TwitVim"
-Bundle "vim-scripts/a.vim"
-Bundle "milkypostman/vim-togglelist"
-Bundle "majutsushi/tagbar"
-Bundle "sagarrakshe/CoVim"
-Bundle "sagarrakshe/ack.vim"
-Bundle "honza/vim-snippets"
-Bundle "jceb/vim-orgmode"
-Bundle "tpope/vim-vinegar"
-Bundle "junegunn/goyo.vim"
-Bundle "amix/vim-zenroom2"
-
 " change the mapleader from \ to ,
 let mapleader=","
 
