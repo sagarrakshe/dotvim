@@ -79,3 +79,9 @@
 [submodule "bundle/javascript"]
 	path = bundle/javascript
 	url = https://github.com/pangloss/vim-javascript
+[submodule "bundle/javascript-syntax"]
+	path = bundle/javascript-syntax
+	url = https://github.com/jelera/vim-javascript-syntax
+[submodule "bundle/emmet-vim"]
+	path = bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim/
