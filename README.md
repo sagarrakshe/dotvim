@@ -38,10 +38,3 @@ It contains about 450+ color themes. Choose yours!
 * [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 
 ##Key-Mappings
-
-##Gmail in Vim - Vmail!
-
-Vmail is a Vim interface to Gmail. To install follow the instructions [here](http://danielchoi.com/software/vmail.html).
-To launch, enter command on terminal `vmail` or if already vim is running execute `!vmail`.
-
-I have remaped `gmail` in normal mode for `vmail`. So in normal mode if you type `gmail` your gmail inbox will open.
