@@ -26,7 +26,7 @@ set showcmd
 
 "Setting Font 
 "Programming Font
-set guifont=Fira\ Mono\ 12
+set guifont=Fira\ Mono\ 11
 colorscheme Monokai 
 
 "Code Folding Settings
@@ -81,26 +81,30 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-h> <C-w>h
 map <C-u> <C-w>l
-map Q :q!
+map Q :q!<CR>
 
 "Insert Mode Mapping
 imap jj <Esc>
 inoremap ;<cr> <end>;
-inoremap :<cr> <end>:
-inoremap <Space><cr> <end><cr>
-inoremap <Space><Space><cr> <end>
-inoremap ,, <ESC>f"i<Right>,
-inoremap ,<cr> <ESC>f'i<Right>,
+" inoremap <Space><cr> <end><cr>
+" inoremap <Space><Space><cr> <end>
 inoremap )) <ESC>f)i<Right>
-inoremap ]] <esc>f]i<right>
 
 " Normal Mode Mapping
 nmap <silent> <leader>ev :e $MYVIMRC<CR> 
+nmap <silent> <leader>eg :e $MYGVIMRC<CR> 
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nmap <silent> <leader>sg :so $MYGVIMRC<CR>
 nmap <silent> <C-D> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR> 
+nmap <M-1> :tabnext 1<CR>
+nmap <M-2> :tabnext 2<CR>
+nmap <M-3> :tabnext 3<CR>
+nmap <M-4> :tabnext 4<CR>
+nmap <M-5> :tabnext 5<CR>
 nmap gmail :!vmail<CR>
-nmap bash :ConqueTermSplit bash
+nmap bash :ConqueTermSplit bash<CR>
+nmap python :ConqueTermSplit ipython<CR>
 
 " nmap <F5> :Errors<CR>
 noremap j gj
@@ -116,6 +120,8 @@ noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+noremap <F12> <Esc>:syntax sync fromstart<CR>
+nnoremap <F7> :NumbersToggle<CR>
 
 " Visual Move Mapping
 vnoremap ( <ESC>`>a)<ESC>`<i(<ESC>
@@ -139,13 +145,20 @@ cnoremap <Esc>d <S-right><Delete>
 cnoremap <C-g>  <C-c>
 
 "Save file as root from vim
-cmap W w !sudo tee % >/dev/null
+cmap w!! w !sudo tee % >/dev/null
 
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 let g:pydiction_location = '/home/sagar/.vim/bundle/Pydiction/complete-dict'
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:jedi#popup_select_first = 0
+let g:syntastic_python_checkers=['pylint']
+let g:AutoPreview_enabled =1 
+let g:AutoPreview_allowed_filetypes = ["c","cpp"]
+let NERDTreeIgnore = ['\.pyc$']
+" let g:clang_library_path = '/usr/lib/libclang.so'
+" let g:clang_debug = 1
+" let g:clang_user_options='|| exit 0'
 
 " mapped <F5> to display error in quickfix window
 function! ToggleQuickFix()
@@ -162,7 +175,6 @@ function! ToggleQuickFix()
   endif
 endfunction
 nmap <script> <silent> <F5> :call ToggleQuickFix()<CR>
-
 
 function! Myscript()
 python<<EOF
