@@ -1,0 +1,6 @@
+[submodule "bundle/auto-pairs"]
+	path = bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
+[submodule "bundle/vundle"]
+	path = bundle/vundle
+	url = https://github.com/gmarik/Vundle.vim
