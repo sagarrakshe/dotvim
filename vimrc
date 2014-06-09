@@ -27,7 +27,7 @@ set showcmd
 "Setting Font 
 "Programming Font
 set guifont=Fira\ Mono\ 11
-colorscheme mango 
+colorscheme jellybeans
 
 "Code Folding Settings
 set foldmethod=indent   "fold based on indent
@@ -68,7 +68,7 @@ nmap <M-2> :tabnext 2<CR>
 nmap <M-3> :tabnext 3<CR>
 nmap <M-4> :tabnext 4<CR>
 nmap <M-5> :tabnext 5<CR>
-nmap gmail :!vmail<CR>
+" nmap gmail :!vmail<CR>
 nmap bash :ConqueTermSplit bash<CR>
 nmap python :ConqueTermSplit ipython<CR>
 
@@ -113,10 +113,10 @@ cnoremap <C-g>  <C-c>
 "Save file as root from vim
 cmap w!! w !sudo tee % >/dev/null
 
-" let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 let g:pydiction_location = '/home/sagar/.vim/bundle/Pydiction/complete-dict'
-" let g:ycm_autoclose_preview_window_after_completion = 1
-" let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:jedi#popup_select_first = 0
 let g:syntastic_python_checkers=['pylint']
 let g:AutoPreview_enabled =1 
@@ -152,3 +152,4 @@ except:
     vim.current.buffer.append("No Math")
 EOF
 endfunction
+
