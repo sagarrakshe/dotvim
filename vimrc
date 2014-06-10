@@ -39,9 +39,11 @@ set foldlevel=1         "this is just what i use
 let mapleader=","
 
 "Mapped Keys
-map <leader>l :setlocal number!<CR>
-map <leader>o :set paste!<CR>
-map <C-Tab> gt
+map <leader>l :setlocal number<CR>
+map <leader>L :set nonumber<CR>
+map <leader>o :set paste<CR>
+map <leader>O :set nopaste<CR>
+map <C-Tab> gt!!
 map <C-S-Tab> gT
 map <C-j> <C-w>j
 map <C-k> <C-w>k
