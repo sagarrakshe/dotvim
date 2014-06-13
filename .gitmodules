@@ -88,3 +88,6 @@
 [submodule "bundle/JsHint"]
 	path = bundle/JsHint
 	url = https://github.com/wookiehangover/jshint.vim
+[submodule "bundle/ack"]
+	path = bundle/ack
+	url = https://github.com/mileszs/ack.vim
