@@ -45,13 +45,16 @@ set mouse=a      " Enable mouse support in console if you are into weird shit
 set dictionary+=/usr/share/dict/words
                     " use system dictionary for auto-completion of english words
 
+" disable auto comment insertion on newline
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 " Cool tab completion stuff while entering commands
 set wildmenu
 set wildmode=list:longest,full
 
 " Setting Font
 " Programming Font
-set guifont=Fira\ Mono\ 11
+set guifont=Fira\ Mono\ 9
 colorscheme jellybeans
 
 " Code Folding Settings
@@ -88,6 +91,9 @@ map Q :q!<CR>
 map N Nzz
 map n nzz
 
+" Cycle through buffers
+map <c-b> :CtrlPBuffer<CR>
+
 " Insert Mode Mapping
 imap jj <Esc>
 
@@ -106,11 +112,15 @@ nmap <silent> <leader>eg :e $MYGVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " source gvimrc
 nmap <silent> <leader>sg :so $MYGVIMRC<CR>
+
 " toggle NERDTree
 nmap <silent> <C-D> :NERDTreeToggle<CR>
 
 " toggle Tagbar
 nmap <F8> :TagbarToggle<CR>
+
+" toggle syntastic checker
+nmap <F3> :SyntasticToggleMode<CR>
 
 " Faster switching to tabs (works in gvim) (Eg. alt+1 goes to tab 1)
 nmap <M-1> :tabnext 1<CR>
@@ -185,7 +195,12 @@ let NERDTreeIgnore = ['\.pyc$']
 " let g:clang_debug = 1
 " let g:clang_user_options='|| exit 0'
 
+" JsHint error indicator
+hi SpellBad cterm=underline,bold ctermbg=white ctermfg=black
 
+" Autocompletion menu colors
+hi Pmenu ctermfg=black ctermbg=white
+hi PmenuSel ctermfg=white ctermbg=yellow
 
 " mapped <F5> to display error in quickfix window
 function! ToggleQuickFix()
@@ -202,6 +217,12 @@ function! ToggleQuickFix()
   endif
 endfunction
 nmap <script> <silent> <F5> :call ToggleQuickFix()<CR>
+
+" auto-reload vim once changed
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END }"
 
 
 " trying vimscript
