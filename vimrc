@@ -1,3 +1,6 @@
+" First to come, use ViM defaults and not Vi (be iMproved)
+set nocompatible
+
 " pathogen
 execute pathogen#infect()
 call pathogen#incubate()
@@ -6,9 +9,6 @@ call pathogen#helptags()
 " Vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
-" First to come, use ViM defaults and not Vi (be iMproved)
-set nocompatible
 
 " Hightlight syntax
 syntax on
@@ -20,8 +20,8 @@ set smartindent
 set nonumber        " don't show line numbers
 set autoindent      " always set autoindenting on
 set copyindent      " copy the previous indentation on autoindenting
-set tabstop=4       " tab is 4 spaces
-set shiftwidth=4    " number of spaces to use for autoindenting
+set tabstop=2       " tab is 4 spaces
+set shiftwidth=2    " number of spaces to use for autoindenting
 set expandtab       " use appropriate number of spaces when tabbing
 set shiftround      " use multiple of shiftwidth when indenting with '<' and '>'
 set ignorecase      " ignore case while search
@@ -54,8 +54,8 @@ set wildmode=list:longest,full
 
 " Setting Font
 " Programming Font
-set guifont=Fira\ Mono\ 9
-colorscheme jellybeans
+set guifont=Fira\ Mono\ 10
+colorscheme molokai
 
 " Code Folding Settings
 set foldmethod=indent   " fold based on indent
@@ -78,10 +78,10 @@ map <C-Tab> gt
 map <C-S-Tab> gT
 
 " key mapping to switch between the split buffers
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-h> <C-w>h
-map <C-u> <C-w>l
+map <C-o>j <C-w>j
+map <C-o>k <C-w>k
+map <C-o>h <C-w>h
+map <C-o>l <C-w>l
 
 " shortcut to close buffer
 map Q :q!<CR>
@@ -99,8 +99,6 @@ imap jj <Esc>
 
 " append semi-colon at the end
 inoremap ;<cr> <end>;
-
-inoremap )) <ESC>f)i<Right>
 
 " Normal Mode Mapping
 " open vimrc
@@ -137,8 +135,8 @@ nmap <M-5> :tabnext 5<CR>
 noremap j gj
 noremap k gk
 
-noremap <silent> <C-S> :update<CR>
-noremap <silent> <C-N> :tabnew<CR>
+" noremap <silent> <C-S> :update<CR>
+" noremap <silent> <C-N> :tabnew<CR>
 
 noremap <C-L> :nohl<CR><C-L>
 
@@ -182,21 +180,27 @@ cmap w!! w !sudo tee % >/dev/null
 "match OverLength /\%81v.\+/
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
-let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:jedi#popup_select_first = 0
-let g:syntastic_python_checkers=['pylint']
-let g:AutoPreview_enabled =1
-let g:AutoPreview_allowed_filetypes = ["c","cpp"]
+" let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+" let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:jedi#popup_select_first = 0
+" let g:syntastic_python_checkers = ['pylint']
+" let g:AutoPreview_enabled = 1
+" let g:AutoPreview_allowed_filetypes = ["c","cpp"]
 let NERDTreeIgnore = ['\.pyc$']
-" let g:clang_library_path = '/usr/lib/libclang.so'
+" let g:clang_library_path = '/usr/lib/llvm-3.4/lib/libclang.so'
 " let g:clang_debug = 1
 " let g:clang_user_options='|| exit 0'
 
+" don't comment blank lines(t-comment)
+let g:tcomment#blank_lines = 0
+
 " JsHint error indicator
 hi SpellBad cterm=underline,bold ctermbg=white ctermfg=black
+
+" Line number colors
+hi LineNr ctermbg=black ctermfg=yellow
 
 " Autocompletion menu colors
 hi Pmenu ctermfg=black ctermbg=white
@@ -224,6 +228,24 @@ augroup reload_vimrc " {
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END }"
 
+" Toggle Maximize
+function! MaximizeToggle()
+  if exists("s:maximize_session")
+    exec "source " . s:maximize_session
+    call delete(s:maximize_session)
+    unlet s:maximize_session
+    let &hidden=s:maximize_hidden_save
+    unlet s:maximize_hidden_save
+  else
+    let s:maximize_hidden_save = &hidden
+    let s:maximize_session = tempname()
+    set hidden
+    exec "mksession! " . s:maximize_session
+    only
+  endif
+endfunction
+
+nnoremap <C-o>z :call MaximizeToggle()<CR>
 
 " trying vimscript
 function! Myscript()
