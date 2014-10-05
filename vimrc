@@ -194,6 +194,7 @@ let NERDTreeIgnore = ['\.pyc$']
 " let g:clang_library_path = '/usr/lib/llvm-3.4/lib/libclang.so'
 " let g:clang_debug = 1
 " let g:clang_user_options='|| exit 0'
+set laststatus=2
 
 " don't comment blank lines(t-comment)
 let g:tcomment#blank_lines = 0
