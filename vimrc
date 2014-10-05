@@ -55,7 +55,8 @@ set wildmode=list:longest,full
 " Setting Font
 " Programming Font
 set guifont=Fira\ Mono\ 10
-colorscheme molokai
+colorscheme hemisu
+set background=dark
 
 " Code Folding Settings
 set foldmethod=indent   " fold based on indent
@@ -84,7 +85,7 @@ map <C-o>h <C-w>h
 map <C-o>l <C-w>l
 
 " shortcut to close buffer
-map Q :q!<CR>
+map <leader>q :q!<CR>
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
@@ -112,7 +113,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>sg :so $MYGVIMRC<CR>
 
 " toggle NERDTree
-nmap <silent> <C-D> :NERDTreeToggle<CR>
+nmap <silent> <leader>d :NERDTreeToggle<CR>
 
 " toggle Tagbar
 nmap <F8> :TagbarToggle<CR>
