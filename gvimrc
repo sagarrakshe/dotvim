@@ -9,5 +9,7 @@ set guioptions=Ace
 set guioptions-=T "remove tool bar
 set guioptions-=m "remove menu bar
 
+set background=light
+
 "Mappings
 map <C-Q> "+gp

@@ -16,6 +16,7 @@ filetype off                   " required!
 filetype plugin on
 filetype plugin indent on
 
+set colorcolumn=80
 set smartindent
 set nonumber        " don't show line numbers
 set autoindent      " always set autoindenting on
@@ -103,9 +104,9 @@ inoremap ;<cr> <end>;
 
 " Normal Mode Mapping
 " open vimrc
-nmap <silent> <leader>ev :e $MYVIMRC<CR> 
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
 " open gvimrc
-nmap <silent> <leader>eg :e $MYGVIMRC<CR> 
+nmap <silent> <leader>eg :e $MYGVIMRC<CR>
 
 " source vimrc
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
@@ -222,6 +223,9 @@ function! ToggleQuickFix()
   endif
 endfunction
 nmap <script> <silent> <F5> :call ToggleQuickFix()<CR>
+
+"set cursor color
+highlight Cursor guifg=white guibg=black
 
 " auto-reload vim once changed
 augroup reload_vimrc " {
