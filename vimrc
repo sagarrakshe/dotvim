@@ -232,6 +232,9 @@ highlight Cursor guifg=white guibg=black
 augroup reload_vimrc " {
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
+    if exists(':Airline')
+      AirlineRefresh
+    endif
 augroup END }"
 
 " Toggle Maximize
