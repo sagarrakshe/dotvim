@@ -231,7 +231,11 @@ highlight Cursor guifg=white guibg=black
 " auto-reload vim once changed
 augroup reload_vimrc " {
     autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+    if has("gui_running")
+      autocmd BufWritePost $MYGVIMRC source $MYGVIMRC
+    else
+      autocmd BufWritePost $MYVIMRC source $MYVIMRC
+    endif
     if exists(':Airline')
       AirlineRefresh
     endif
