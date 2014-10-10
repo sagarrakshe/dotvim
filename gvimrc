@@ -13,3 +13,10 @@ set background=light
 
 "Mappings
 map <C-Q> "+gp
+
+" Faster switching to tabs (works in gvim) (Eg. alt+1 goes to tab 1)
+nmap <M-1> :tabnext 1<CR>
+nmap <M-2> :tabnext 2<CR>
+nmap <M-3> :tabnext 3<CR>
+nmap <M-4> :tabnext 4<CR>
+nmap <M-5> :tabnext 5<CR>
