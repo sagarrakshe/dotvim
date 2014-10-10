@@ -114,20 +114,13 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>sg :so $MYGVIMRC<CR>
 
 " toggle NERDTree
-nmap <silent> <leader>d :NERDTreeToggle<CR>
+nmap <silent> <leader>D :NERDTreeToggle<CR>
 
 " toggle Tagbar
 nmap <F8> :TagbarToggle<CR>
 
 " toggle syntastic checker
 nmap <F3> :SyntasticToggleMode<CR>
-
-" Faster switching to tabs (works in gvim) (Eg. alt+1 goes to tab 1)
-nmap <M-1> :tabnext 1<CR>
-nmap <M-2> :tabnext 2<CR>
-nmap <M-3> :tabnext 3<CR>
-nmap <M-4> :tabnext 4<CR>
-nmap <M-5> :tabnext 5<CR>
 
 " nmap gmail :!vmail<CR>
 " nmap bash :ConqueTermSplit bash<CR>
