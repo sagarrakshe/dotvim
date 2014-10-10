@@ -13,9 +13,9 @@ echo "Linking to new vimrc and gvimrc files"
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc
 
-echo "Installing plugins.."
-git submodule update --init --recursive
-echo "Installed all plugins."
+# echo "Installing plugins.."
+# git submodule update --init --recursive
+# echo "Installed all plugins."
 
 echo "Intalling Fira Mono font.."
 sudo cp -r ./font/Fira\ Mono /usr/share/fonts/truetype/
