@@ -264,3 +264,20 @@ except:
     vim.current.buffer.append("No Math")
 EOF
 endfunction
+
+" Bundle Plugins
+" Plugin gmarik/Vundle.vim
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'wookiehangover/jshint.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-scripts/tComment'
+Plugin 'majutsushi/tagbar'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-surround'
