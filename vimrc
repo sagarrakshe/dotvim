@@ -7,8 +7,8 @@ call pathogen#incubate()
 call pathogen#helptags()
 
 " Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 " Hightlight syntax
 syntax on
