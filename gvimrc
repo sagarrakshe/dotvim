@@ -1,4 +1,4 @@
-" call system('wmctrl -i -b add,maximized_vert,maximized_horz -r '.v:windowid)
+" Call system('wmctrl -i -b add,maximized_vert,maximized_horz -r '.v:windowid)
 if has("gui_running")
   set lines=9999 columns=9999
   set visualbell
@@ -10,9 +10,13 @@ set guioptions-=T "remove tool bar
 set guioptions-=m "remove menu bar
 
 set background=light
+colorscheme molokai
 
-"Mappings
+" Mappings
 map <C-Q> "+gp
+
+" Disable cursor blink
+set guicursor+=a:blinkon0
 
 " Faster switching to tabs (works in gvim) (Eg. alt+1 goes to tab 1)
 nmap <M-1> :tabnext 1<CR>
