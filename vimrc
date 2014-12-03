@@ -55,9 +55,9 @@ set wildmode=list:longest,full
 
 " Setting Font
 " Programming Font
-set guifont=Fira\ Mono\ 10
-colorscheme hemisu
-set background=dark
+" set guifont=Fira\ Mono\ 12
+colorscheme molokai
+" set background=dark
 
 " Code Folding Settings
 set foldmethod=indent   " fold based on indent
@@ -187,6 +187,9 @@ let NERDTreeIgnore = ['\.pyc$']
 " let g:clang_library_path = '/usr/lib/llvm-3.4/lib/libclang.so'
 " let g:clang_debug = 1
 " let g:clang_user_options='|| exit 0'
+let g:syntastic_mode_map={ 'mode': 'active',
+                     \ 'active_filetypes': [],
+                     \ 'passive_filetypes': ['html'] }
 set laststatus=2
 
 " don't comment blank lines(t-comment)
@@ -198,9 +201,18 @@ hi SpellBad cterm=underline,bold ctermbg=white ctermfg=black
 " Line number colors
 hi LineNr ctermbg=black ctermfg=yellow
 
+" Hide arrows for nerdtree
+let g:NERDTreeDirArrows=0
+
+" Use 256 colors when opened in terminal
+let &t_Co=256
+
 " Autocompletion menu colors
 hi Pmenu ctermfg=black ctermbg=white
 hi PmenuSel ctermfg=white ctermbg=yellow
+
+" Template configuration
+let g:email="sagarrakshe@zlemma.com"
 
 " mapped <F5> to display error in quickfix window
 function! ToggleQuickFix()
@@ -218,7 +230,7 @@ function! ToggleQuickFix()
 endfunction
 nmap <script> <silent> <F5> :call ToggleQuickFix()<CR>
 
-"set cursor color
+" set cursor color
 highlight Cursor guifg=white guibg=black
 
 " auto-reload vim once changed
@@ -281,3 +293,5 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-surround'
+Plugin 'tmhedberg/matchit'
+Plugin 'pangloss/vim-javascript'
