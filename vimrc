@@ -113,6 +113,9 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " source gvimrc
 nmap <silent> <leader>sg :so $MYGVIMRC<CR>
 
+"open vim-tips files
+nmap <silent> <leader>et :e ~/.vim/vim-tips.txt<CR>
+
 " toggle NERDTree
 nmap <silent> <leader>D :NERDTreeToggle<CR>
 
