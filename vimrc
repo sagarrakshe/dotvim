@@ -215,7 +215,7 @@ hi Pmenu ctermfg=black ctermbg=white
 hi PmenuSel ctermfg=white ctermbg=yellow
 
 " Template configuration
-let g:email="sagarrakshe@zlemma.com"
+let g:email="sagarrakshe2@gmail.com"
 
 " mapped <F5> to display error in quickfix window
 function! ToggleQuickFix()
