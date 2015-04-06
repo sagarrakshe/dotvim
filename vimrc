@@ -186,7 +186,8 @@ highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 " let g:syntastic_python_checkers = ['pylint']
 " let g:AutoPreview_enabled = 1
 " let g:AutoPreview_allowed_filetypes = ["c","cpp"]
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', 'node_modules']
+let g:NERDTreeDirArrows=0
 " let g:clang_library_path = '/usr/lib/llvm-3.4/lib/libclang.so'
 " let g:clang_debug = 1
 " let g:clang_user_options='|| exit 0'
@@ -205,7 +206,6 @@ hi SpellBad cterm=underline,bold ctermbg=white ctermfg=black
 hi LineNr ctermbg=black ctermfg=yellow
 
 " Hide arrows for nerdtree
-let g:NERDTreeDirArrows=0
 
 " Use 256 colors when opened in terminal
 let &t_Co=256
