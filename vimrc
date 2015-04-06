@@ -280,6 +280,11 @@ except:
 EOF
 endfunction
 
+" directory specific vimrc
+if filereadable(".vim.custom")
+  so .vim.custom
+endif
+
 " Bundle Plugins
 " Plugin gmarik/Vundle.vim
 Plugin 'jiangmiao/auto-pairs'
