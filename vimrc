@@ -53,6 +53,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set wildmenu
 set wildmode=list:longest,full
 
+" tags directory
+set tags=tags;~/.mytags
+
 " Setting Font
 " Programming Font
 " set guifont=Fira\ Mono\ 12
