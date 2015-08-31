@@ -200,7 +200,7 @@ let g:syntastic_mode_map={ 'mode': 'active',
 set laststatus=2
 
 " don't comment blank lines(t-comment)
-let g:tcomment#blank_lines = 0
+" let g:tcomment#blank_lines = 0
 
 " JsHint error indicator
 hi SpellBad cterm=underline,bold ctermbg=white ctermfg=black
