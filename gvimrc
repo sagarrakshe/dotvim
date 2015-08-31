@@ -10,10 +10,14 @@ set guioptions-=T "remove tool bar
 set guioptions-=m "remove menu bar
 
 set background=light
+" set guifont=Andale\ Mono\ 13
 colorscheme molokai
 
 " Mappings
 map <C-Q> "+gp
+
+" Insert Mode Mapping
+imap jj <Esc>
 
 " Disable cursor blink
 set guicursor+=a:blinkon0
