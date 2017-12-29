@@ -43,8 +43,12 @@ set viminfo='20,\"50 " Tell vim to remember certain things when we exit
 
 set hidden        " allow buffers to be hidden
 set mouse=a      " Enable mouse support in console if you are into weird shit
+
+" use system dictionary for auto-completion of english words
 set dictionary+=/usr/share/dict/words
-                    " use system dictionary for auto-completion of english words
+
+" Clipboard Settings
+set clipboard=unamed
 
 " disable auto comment insertion on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -117,7 +121,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>sg :so $MYGVIMRC<CR>
 
 "open vim-tips files
-nmap <silent> <leader>et :e ~/.vim/vim-tips.txt<CR>
+" nmap <silent> <leader>et :e ~/.vim/vim-tips.txt<CR>
 
 " toggle NERDTree
 nmap <silent> <leader>D :NERDTreeToggle<CR>
@@ -153,6 +157,11 @@ noremap <Right> <nop>
 noremap <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <F12> <C-o>:syntax sync fromstart<CR>
 
+" Fugitive plugin
+nnoremap <space>gs :Gstatus<CR>
+nnoremap <space>gt :Gcommit -v -q %:p<CR>
+
+
 " Visual Move Mapping
 " put bracket/quotes around the selected text
 vnoremap ( <ESC>`>a)<ESC>`<i(<ESC>
@@ -173,7 +182,7 @@ cnoremap <M-d>  <S-right><Delete>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 cnoremap <Esc>d <S-right><Delete>
-cnoremap <C-g>  <C-c>
+" cnoremap <C-g>  <C-c>
 
 " Save file as root from vim
 cmap w!! w !sudo tee % >/dev/null
@@ -183,10 +192,12 @@ highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 
 " let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 " let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
+let g:ycm_python_binary_path = 'python'
 " let g:ycm_autoclose_preview_window_after_completion = 1
 " let g:ycm_autoclose_preview_window_after_insertion = 1
+
 " let g:jedi#popup_select_first = 0
-" let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['flake8']
 " let g:AutoPreview_enabled = 1
 " let g:AutoPreview_allowed_filetypes = ["c","cpp"]
 let NERDTreeIgnore = ['\.pyc$', 'node_modules']
@@ -218,7 +229,7 @@ hi Pmenu ctermfg=black ctermbg=white
 hi PmenuSel ctermfg=white ctermbg=yellow
 
 " Template configuration
-let g:email="sagarrakshe2@gmail.com"
+" let g:email="sagarrakshe2@gmail.com"
 
 " mapped <F5> to display error in quickfix window
 function! ToggleQuickFix()
@@ -271,17 +282,12 @@ endfunction
 
 nnoremap <C-o>z :call MaximizeToggle()<CR>
 
-" trying vimscript
-function! Myscript()
-python<<EOF
-import vim
-try:
-    import vlc
-    vim.current.buffer.append("Math")
-except:
-    vim.current.buffer.append("No Math")
-EOF
+function! SortLines() range
+  execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
+  execute a:firstline . "," . a:lastline . 'sort n'
+  execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
 endfunction
+
 
 " directory specific vimrc
 if filereadable(".vim.custom")
@@ -292,7 +298,6 @@ endif
 " Plugin gmarik/Vundle.vim
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'kien/ctrlp.vim'
-Plugin 'mattn/emmet-vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'wookiehangover/jshint.vim'
 Plugin 'scrooloose/nerdtree'
@@ -302,7 +307,9 @@ Plugin 'vim-scripts/tComment'
 Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
+
 " Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-surround'
 Plugin 'tmhedberg/matchit'
+
 " Plugin 'pangloss/vim-javascript'
