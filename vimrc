@@ -21,8 +21,8 @@ set smartindent
 set nonumber        " don't show line numbers
 set autoindent      " always set autoindenting on
 set copyindent      " copy the previous indentation on autoindenting
-set tabstop=2       " tab is 4 spaces
-set shiftwidth=2    " number of spaces to use for autoindenting
+set tabstop=4       " tab is 4 spaces
+set shiftwidth=4    " number of spaces to use for autoindenting
 set expandtab       " use appropriate number of spaces when tabbing
 set shiftround      " use multiple of shiftwidth when indenting with '<' and '>'
 set ignorecase      " ignore case while search
@@ -38,6 +38,7 @@ set showcmd         " show current command in bottom line
 set wildignore=*.swp,*.bak,*.pyc,*.class,*/migrations/*,*/blackhole__/*,*/tmp/*,*/search*/*
 
 set list
+set invlist
 set listchars=tab:>.,trail:.,extends:#,nbsp:.  " highlight whitespace
 set viminfo='20,\"50 " Tell vim to remember certain things when we exit
 
@@ -46,9 +47,6 @@ set mouse=a      " Enable mouse support in console if you are into weird shit
 
 " use system dictionary for auto-completion of english words
 set dictionary+=/usr/share/dict/words
-
-" Clipboard Settings
-set clipboard=unamed
 
 " disable auto comment insertion on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -149,10 +147,10 @@ noremap <C-L> :nohl<CR><C-L>
 nnoremap ; :
 
 " Arrow keys are evil
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
+" noremap <Up> <nop>
+" noremap <Down> <nop>
+" noremap <Left> <nop>
+" noremap <Right> <nop>
 
 noremap <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <F12> <C-o>:syntax sync fromstart<CR>
@@ -194,7 +192,7 @@ highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 " let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 let g:ycm_python_binary_path = 'python'
 " let g:ycm_autoclose_preview_window_after_completion = 1
-" let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " let g:jedi#popup_select_first = 0
 let g:syntastic_python_checkers = ['flake8']
@@ -313,3 +311,18 @@ Plugin 'tpope/vim-surround'
 Plugin 'tmhedberg/matchit'
 
 " Plugin 'pangloss/vim-javascript'
+
+
+noremap <leader>r :ToggleBool<CR>
+
+" Go config
+
+let g:go_disable_autoinstall = 0
+
+" Highlight
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
