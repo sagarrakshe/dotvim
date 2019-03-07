@@ -21,8 +21,8 @@ set smartindent
 set nonumber        " don't show line numbers
 set autoindent      " always set autoindenting on
 set copyindent      " copy the previous indentation on autoindenting
-set tabstop=4       " tab is 4 spaces
-set shiftwidth=4    " number of spaces to use for autoindenting
+set tabstop=2       " tab is 4 spaces
+set shiftwidth=2    " number of spaces to use for autoindenting
 set expandtab       " use appropriate number of spaces when tabbing
 set shiftround      " use multiple of shiftwidth when indenting with '<' and '>'
 set ignorecase      " ignore case while search
@@ -160,6 +160,11 @@ nnoremap <space>gs :Gstatus<CR>
 nnoremap <space>gt :Gcommit -v -q %:p<CR>
 
 
+" Copy to clipboard
+noremap <Leader>y "*y
+noremap <Leader>Y "+y
+
+
 " Visual Move Mapping
 " put bracket/quotes around the selected text
 vnoremap ( <ESC>`>a)<ESC>`<i(<ESC>
@@ -198,7 +203,7 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:syntastic_python_checkers = ['flake8']
 " let g:AutoPreview_enabled = 1
 " let g:AutoPreview_allowed_filetypes = ["c","cpp"]
-let NERDTreeIgnore = ['\.pyc$', 'node_modules']
+let NERDTreeIgnore = ['\.pyc$', 'node_modules', '__pycache__']
 let g:NERDTreeDirArrows=0
 " let g:clang_library_path = '/usr/lib/llvm-3.4/lib/libclang.so'
 " let g:clang_debug = 1
@@ -279,6 +284,7 @@ function! MaximizeToggle()
 endfunction
 
 nnoremap <C-o>z :call MaximizeToggle()<CR>
+nnoremap <C-a>d :g/^$/d<CR>
 
 function! SortLines() range
   execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
@@ -291,6 +297,12 @@ endfunction
 if filereadable(".vim.custom")
   so .vim.custom
 endif
+
+" copy to buffer
+vmap <C-c> :w! ~/.vimbuffer<CR>
+nmap <C-c> :.w! ~/.vimbuffer<CR>
+" paste from buffer
+" map <C-p> :r ~/.vimbuffer<CR>
 
 " Bundle Plugins
 " Plugin gmarik/Vundle.vim
@@ -305,6 +317,7 @@ Plugin 'vim-scripts/tComment'
 Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
+Plugin 'Vundle.vim'
 
 " Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-surround'
@@ -326,3 +339,11 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
+
+" Clean this config
+set splitright
+
+" Hcl config
+let g:hcl_fmt_autosave = 0
+let g:tf_fmt_autosave = 0
+let g:nomad_fmt_autosave = 0
