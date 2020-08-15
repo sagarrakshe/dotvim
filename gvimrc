@@ -10,7 +10,7 @@ set guioptions-=T "remove tool bar
 set guioptions-=m "remove menu bar
 
 set background=light
-" set guifont=Andale\ Mono\ 13
+"set guifont=Roboto\12
 colorscheme molokai
 
 " Mappings

@@ -118,9 +118,6 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " source gvimrc
 nmap <silent> <leader>sg :so $MYGVIMRC<CR>
 
-"open vim-tips files
-" nmap <silent> <leader>et :e ~/.vim/vim-tips.txt<CR>
-
 " toggle NERDTree
 nmap <silent> <leader>D :NERDTreeToggle<CR>
 
@@ -129,10 +126,6 @@ nmap <F8> :TagbarToggle<CR>
 
 " toggle syntastic checker
 nmap <F3> :SyntasticToggleMode<CR>
-
-" nmap gmail :!vmail<CR>
-" nmap bash :ConqueTermSplit bash<CR>
-" nmap python :ConqueTermSplit ipython<CR>
 
 " Magically move up and down in the same wrapped line!
 noremap j gj
@@ -191,7 +184,9 @@ cnoremap <Esc>d <S-right><Delete>
 cmap w!! w !sudo tee % >/dev/null
 
 "match OverLength /\%81v.\+/
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+
+" Matching brackets
 
 " let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 " let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
@@ -231,8 +226,8 @@ let &t_Co=256
 hi Pmenu ctermfg=black ctermbg=white
 hi PmenuSel ctermfg=white ctermbg=yellow
 
-" Template configuration
-" let g:email="sagarrakshe2@gmail.com"
+" Remap code completion to Ctrl+Space {{{2
+inoremap <Nul> <C-x><C-o>
 
 " mapped <F5> to display error in quickfix window
 function! ToggleQuickFix()
@@ -299,13 +294,13 @@ if filereadable(".vim.custom")
 endif
 
 " copy to buffer
-vmap <C-c> :w! ~/.vimbuffer<CR>
-nmap <C-c> :.w! ~/.vimbuffer<CR>
+vmap <silent> <C-c> :w !xsel --clipboard --input<CR>
+" nmap <C-c> :.w! ~/.vimbuffer<CR>
 " paste from buffer
 " map <C-p> :r ~/.vimbuffer<CR>
 
 " Bundle Plugins
-" Plugin gmarik/Vundle.vim
+Plugin 'gmarik/Vundle.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'kien/ctrlp.vim'
 Plugin 'davidhalter/jedi-vim'
@@ -317,19 +312,12 @@ Plugin 'vim-scripts/tComment'
 Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
-Plugin 'Vundle.vim'
-
-" Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-surround'
 Plugin 'tmhedberg/matchit'
-
-" Plugin 'pangloss/vim-javascript'
-
 
 noremap <leader>r :ToggleBool<CR>
 
 " Go config
-
 let g:go_disable_autoinstall = 0
 
 " Highlight
@@ -339,6 +327,10 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
+let g:go_gocode_autobuild=0
+
+" Terraform
+let g:terraform_align=1
 
 " Clean this config
 set splitright
@@ -347,3 +339,7 @@ set splitright
 let g:hcl_fmt_autosave = 0
 let g:tf_fmt_autosave = 0
 let g:nomad_fmt_autosave = 0
+
+" Close the preview buffer for go
+set completeopt-=preview
+
