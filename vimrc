@@ -56,7 +56,7 @@ set wildmenu
 set wildmode=list:longest,full
 
 " tags directory
-set tags=tags;~/.mytags
+set tags=~/tmp_da/tags
 
 " Setting Font
 " Programming Font
@@ -194,7 +194,7 @@ let g:ycm_python_binary_path = 'python'
 " let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
-" let g:jedi#popup_select_first = 0
+let g:jedi#popup_select_first = 0
 let g:syntastic_python_checkers = ['flake8']
 " let g:AutoPreview_enabled = 1
 " let g:AutoPreview_allowed_filetypes = ["c","cpp"]
@@ -314,6 +314,7 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tmhedberg/matchit'
+Plugin 'iamcco/markdown-preview.nvim'
 
 noremap <leader>r :ToggleBool<CR>
 

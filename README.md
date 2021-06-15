@@ -1,8 +1,8 @@
-##~/.vimrc configuration
+## ~/.vimrc configuration
 
 I have been using vim since 3-4 years but never used even basic features in it. But recently i played lot with vim and tweaked for my needs. This is a small attempt for awesome `vimrc` plugin. 
 
-##Installation:
+## Installation:
 
 It's pretty simple to install. Clone the repo and execute the `install.sh` file from it. It takes backup of your existing `.vimrc` and `.gvimrc` files(`~/.vimrc` and `~/.gvimrc`). In case you need to switch back to your original, just remap those original files.
     
@@ -10,11 +10,11 @@ It's pretty simple to install. Clone the repo and execute the `install.sh` file 
     $ cd .vim
     $ ./install.sh
 
-##Color-Themes
+## Color-Themes
 
 It contains about 450+ color themes. Choose yours!
 
-##Plugins
+## Plugins
 
 * [Auto-pairs](https://github.com/jiangmiao/auto-pairs)
 * [clang_complete](https://github.com/Rip-Rip/clang_complete)
@@ -37,4 +37,4 @@ It contains about 450+ color themes. Choose yours!
 * [Surround](https://github.com/tpope/vim-surround)
 * [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 
-##Key-Mappings
+## Key-Mappings
